@@ -40,7 +40,7 @@ Get Started in 3 Steps
 
   1. Clone the project:
   
-    git clone <your-repository-url>
+    git clone https://github.com/ace3579910/Avionics-Sim-GUI/tree/main
   
   2. Install the good stuff:
   
