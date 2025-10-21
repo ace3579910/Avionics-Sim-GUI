@@ -36,5 +36,17 @@ numpy: For the math behind the realistic GPS noise simulation and dynamic demo d
 plotly: For creating the beautiful, interactive map on the Multi-Function Display.
 
 
+Get Started in 3 Steps
 
-python avion_main.py
+  1. Clone the project:
+  
+    git clone <your-repository-url>
+  
+  2. Install the good stuff:
+  
+    pip install -r requirements.txt
+  
+  3. Launch the project
+  
+    python avion_main.py
+
