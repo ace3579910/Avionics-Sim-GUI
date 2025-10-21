@@ -16,18 +16,18 @@ import plotly.graph_objects as go
 import json
 import time
 
-# --- Configuration ---
+# Configuration
 AVIATIONSTACK_API_URL = "http://api.aviationstack.com/v1/flights"
 WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
 
-# --- Sample Data for Demo Mode ---
+# Sample Data for Demo Mode
 SAMPLE_FLIGHT_DATA = {
     "800A0A": { "callsign": "VTI812", "lon": 77.1025, "lat": 28.5665, "altitude": 35000, "velocity": 450, "vertical_rate": 0, "dep_airport": "Indira Gandhi Int'l", "dep_iata": "DEL", "arr_airport": "Chhatrapati Shivaji Maharaj Int'l", "arr_iata": "BOM" },
     "800C3B": { "callsign": "IGO6031", "lon": 72.8777, "lat": 19.0896, "altitude": 28000, "velocity": 400, "vertical_rate": 1500, "dep_airport": "Chhatrapati Shivaji Maharaj Int'l", "dep_iata": "BOM", "arr_airport": "Kempegowda Int'l", "arr_iata": "BLR" },
     "8006E1": { "callsign": "AIC505", "lon": 77.5946, "lat": 12.9716, "altitude": 32000, "velocity": 420, "vertical_rate": -500, "dep_airport": "Kempegowda Int'l", "dep_iata": "BLR", "arr_airport": "Netaji Subhas Chandra Bose Int'l", "arr_iata": "CCU" }
 }
 
-# --- Custom Toast Notification Widget ---
+# Custom Toast Notification Widget
 class Toast(QWidget):
     def __init__(self, parent, message):
         super().__init__(parent); self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint); self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
@@ -41,7 +41,7 @@ class Toast(QWidget):
     def hide_toast(self):
         self.animation.setStartValue(1.0); self.animation.setEndValue(0.0); self.animation.finished.connect(self.close); self.animation.start()
 
-# --- Custom Themed Modal Dialog ---
+# Custom Themed Modal Dialog
 class ModalDialog(QWidget):
     def __init__(self, parent, title, message):
         super().__init__(parent); self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.Dialog); self.setWindowModality(Qt.WindowModality.ApplicationModal); self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground); self.setFixedSize(parent.size())
@@ -56,7 +56,7 @@ class ModalDialog(QWidget):
         start_pos = QRect(self.dialog_widget.x(), -self.dialog_widget.height(), self.dialog_widget.width(), self.dialog_widget.height()); end_pos = self.dialog_widget.geometry()
         self.animation.setStartValue(start_pos); self.animation.setEndValue(end_pos); self.animation.start(); self.show()
 
-# --- Data Flow Diagram Widget ---
+# Data Flow Diagram Widget
 class DataFlowView(QGraphicsView):
     def __init__(self):
         super().__init__(); self.setScene(QGraphicsScene(self)); self.setRenderHint(QPainter.RenderHint.Antialiasing); self.setFrameShape(QFrame.Shape.NoFrame); self.setBackgroundBrush(QBrush(QColor("#1E1E2F")))
@@ -69,7 +69,7 @@ class DataFlowView(QGraphicsView):
         pen = QPen(QColor("#5A67D8"), 2, Qt.PenStyle.DashLine); path1 = QPainterPath(); path1.moveTo(120, 45); path1.lineTo(160, 45); self.scene().addPath(path1, pen)
         path2 = QPainterPath(); path2.moveTo(260, 45); path2.lineTo(300, 45); self.scene().addPath(path2, pen)
 
-# --- PFD Widgets ---
+# PFD Widgets
 class AttitudeIndicator(QGraphicsView):
     def __init__(self):
         super().__init__(); self.setScene(QGraphicsScene(self)); self.setRenderHint(QPainter.RenderHint.Antialiasing); self.setFrameShape(QFrame.Shape.NoFrame); self.setBackgroundBrush(QBrush(QColor("#000000"))); self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff); self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
