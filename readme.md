@@ -42,11 +42,11 @@ Get Started in 3 Steps
   
     git clone https://github.com/ace3579910/Avionics-Sim-GUI/tree/main
   
-  2. Install the good stuff:
+  2. Install the requirements:
   
     pip install -r requirements.txt
   
-  3. Launch the project
+  3. Launch the project:
   
     python avion_main.py
 
