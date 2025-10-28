@@ -17,8 +17,8 @@ import json
 import time
 
 # Configuration
-AVIATIONSTACK_API_URL = "http://api.aviationstack.com/v1/flights"
-WEATHER_API_URL = "https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
+AVIATIONSTACK_API_URL = "(insert_your_api)"
+WEATHER_API_URL = "(insert your api)"
 
 # Sample Data for Demo Mode
 SAMPLE_FLIGHT_DATA = {
